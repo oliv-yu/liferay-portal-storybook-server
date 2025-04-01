@@ -12,7 +12,7 @@ export default {
 const Template = (args) => (
 	<SelectVocabularies
 		disabled={false}
-		initialSelectedVocabularyIds=""
+		initialSelectedVocabularyExternalReferenceCodes="L_GUEST&&12238"
 		learnResources={{"portal-search-web": portalSearchWeb}}
 		{...args}
 	/>

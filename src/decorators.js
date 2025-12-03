@@ -5,6 +5,15 @@ import {LearnResourcesContext} from "../static/mock-components/src/main/resource
 
 import portalSearchWeb from "../static/learn-resources/portal-search-web.json";
 
+export const FeatureFlagDecorator = (featureFlag, enabled) => (Story) => {
+	window.Liferay.FeatureFlags = {
+		...window.Liferay.FeatureFlags,
+		[featureFlag]: enabled,
+	};
+
+	return <Story />;
+};
+
 export const SortDecorator = (Story) => (
 	<div className="portlet-sort">
 		<Story />

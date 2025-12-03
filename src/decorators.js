@@ -38,6 +38,15 @@ export const EditElementDecorator = (Story) => (
 	</ErrorBoundary>
 );
 
+export const FeatureFlagDecorator = (featureFlag, enabled) => (Story) => {
+	window.Liferay.FeatureFlags = {
+		...window.Liferay.FeatureFlags,
+		[featureFlag]: enabled,
+	};
+
+	return <Story />;
+};
+
 export const ThemeContextDecorator = (Story) => (
 	<ThemeContext.Provider value={CONTEXT}>
 		<Story />

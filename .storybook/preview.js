@@ -1,8 +1,8 @@
 import React from "react";
 import {ClayIconSpriteContext} from "@clayui/icon";
 
-import "../../liferay-portal-master/portal/modules/apps/frontend-theme/frontend-theme-admin/build/css/main.scss";
-import "../../liferay-portal-master/portal/modules/apps/frontend-theme/frontend-theme-admin/build/css/clay.scss";
+import "../../liferay-portal/modules/apps/frontend-theme/frontend-theme-admin/build/css/main.scss";
+import "../../liferay-portal/modules/apps/frontend-theme/frontend-theme-admin/build/css/clay.scss";
 
 import "src/main/resources/META-INF/resources/sxp_blueprint_admin/css/main.scss";
 

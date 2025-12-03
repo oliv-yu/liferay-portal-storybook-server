@@ -11,6 +11,15 @@ export const ContainerDecorator = (Story) => (
 	</ClayLayout.ContainerFluid>
 );
 
+export const FeatureFlagDecorator = (featureFlag, enabled) => (Story) => {
+	window.Liferay.FeatureFlags = {
+		...window.Liferay.FeatureFlags,
+		[featureFlag]: enabled,
+	};
+
+	return <Story />;
+};
+
 export const SheetDecorator = (Story) => (
 	<div class="sheet sheet-lg">
 		<Story />

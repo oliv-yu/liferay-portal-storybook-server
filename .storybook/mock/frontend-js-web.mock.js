@@ -6,9 +6,9 @@
 /* eslint-disable no-console */
 /* eslint-env browser */
 
-import LocalStorage from "../static/mock-components/src/main/resources/META-INF/resources/util/local_storage";
-import SessionStorage from "../static/mock-components/src/main/resources/META-INF/resources/util/session_storage";
-import dateUtils from "../static/mock-components/src/main/resources/META-INF/resources/util/date";
+import LocalStorage from "../../static/mock-components/src/main/resources/META-INF/resources/util/local_storage";
+import SessionStorage from "../../static/mock-components/src/main/resources/META-INF/resources/util/session_storage";
+import dateUtils from "../../static/mock-components/src/main/resources/META-INF/resources/util/date";
 
 /**
  * Appends given parameters to the given URL.

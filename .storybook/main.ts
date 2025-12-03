@@ -113,23 +113,36 @@ const config: StorybookConfig = {
 				...(config.plugins || []),
 				new webpack.NormalModuleReplacementPlugin(
 					/frontend-js-components-web/,
-					path.join(__dirname, "frontend-js-components-web.mock.js"),
+					path.join(
+						__dirname,
+						"mock/frontend-js-components-web.mock.js",
+					),
 				),
 				new webpack.NormalModuleReplacementPlugin(
 					/frontend-js-react-web/,
-					path.join(__dirname, "frontend-js-react-web.mock.js"),
+					path.join(__dirname, "mock/frontend-js-react-web.mock.js"),
 				),
 				new webpack.NormalModuleReplacementPlugin(
 					/frontend-js-web/,
-					path.join(__dirname, "frontend-js-web.mock.js"),
+					path.join(__dirname, "mock/frontend-js-web.mock.js"),
 				),
 				new webpack.NormalModuleReplacementPlugin(
 					/asset-taglib/,
-					path.join(__dirname, "asset-taglib.mock.js"),
+					path.join(__dirname, "mock/asset-taglib.mock.js"),
 				),
 				new webpack.NormalModuleReplacementPlugin(
 					/@liferay\/frontend-js-codemirror-web/,
-					path.join(__dirname, "frontend-js-codemirror-web.mock.js"),
+					path.join(
+						__dirname,
+						"mock/frontend-js-codemirror-web.mock.js",
+					),
+				),
+				new webpack.NormalModuleReplacementPlugin(
+					/@liferay\/frontend-js-item-selector-web/,
+					path.join(
+						__dirname,
+						"mock/frontend-js-item-selector-web.mock.js",
+					),
 				),
 			],
 		};

@@ -6,9 +6,9 @@
 /* eslint-disable no-console */
 /* eslint-env browser */
 
-import LocalStorage from "../static/mock-components/src/main/resources/META-INF/resources/util/local_storage";
-import SessionStorage from "../static/mock-components/src/main/resources/META-INF/resources/util/session_storage";
-import {checkConsent} from "../static/mock-components/src/main/resources/META-INF/resources/util/consent";
+import LocalStorage from "../../static/mock-components/src/main/resources/META-INF/resources/util/local_storage";
+import SessionStorage from "../../static/mock-components/src/main/resources/META-INF/resources/util/session_storage";
+import {checkConsent} from "../../static/mock-components/src/main/resources/META-INF/resources/util/consent";
 
 /**
  * Appends given parameters to the given URL.
@@ -84,7 +84,7 @@ function sub(string, data) {
 	}
 
 	return string.replace(REGEX_SUB, (match, key) =>
-		data[key] === undefined ? match : data[key]
+		data[key] === undefined ? match : data[key],
 	);
 }
 

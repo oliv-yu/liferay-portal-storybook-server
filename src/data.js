@@ -253,6 +253,7 @@ export const INITIAL_CONFIGURATION = {
 			"com.liferay.account.internal.search.spi.model.query.contributor.AccountGroupKeywordQueryContributor",
 		],
 		searchableAssetTypes: [],
+		scope: ["L_GUEST"],
 	},
 	highlightConfiguration: {},
 	parameterConfiguration: {},

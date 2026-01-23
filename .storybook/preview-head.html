@@ -5,7 +5,9 @@
 		detach: () => {},
 		FeatureFlags: {
 			"LPD-6368": true, // rr site + sxpBlueprint scopeability
-			"LPS-129412": true, // blueprints collection provider
+			"LPS-129412": true, // blueprints collection provider,
+			"LPD-37320": true, // unified query builder
+			"LPD-41306": true, // site API
 		},
 		Language: {
 			available: {
@@ -48,7 +50,7 @@
 				return values.reduce(
 					(acc, value, i) =>
 						acc.replace(new RegExp(`{[${i}]}`), value),
-					key
+					key,
 				);
 			},
 		},

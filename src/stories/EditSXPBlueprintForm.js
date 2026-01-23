@@ -1,6 +1,7 @@
 import React from "react";
 
 import EditSXPBlueprintForm from "src/main/resources/META-INF/resources/sxp_blueprint_admin/js/edit_sxp_blueprint/EditSXPBlueprintForm";
+import UQBEditSXPBlueprintForm from "src/main/resources/META-INF/resources/sxp_blueprint_admin/js/edit_sxp_blueprint/UQBEditSXPBlueprintForm";
 import getUIConfigurationValues from "src/main/resources/META-INF/resources/sxp_blueprint_admin/js/utils/sxp_element/get_ui_configuration_values";
 import {EditBlueprintDecorator, ThemeContextDecorator} from "../decorators";
 
@@ -135,4 +136,28 @@ CollectionProvider.args = {
 			legacyAssetCollectionProvider: true,
 		},
 	},
+};
+
+const UQBTemplate = (args) => <UQBEditSXPBlueprintForm {...args} />;
+
+export const UQBElements = UQBTemplate.bind({});
+
+UQBElements.args = {
+	sxpBlueprintId: "1",
+	initialExternalReferenceCode: "ERC_TEST",
+	entityJSON: ENTITY_JSON,
+	initialDescription: "Test Description",
+	initialDescriptionI18n: {
+		"en-US": "test-description",
+	},
+	initialTitle: "Test Title",
+	initialTitleI18n: {
+		"en-US": "test-title",
+	},
+	initialConfiguration: INITIAL_CONFIGURATION,
+	initialSXPElementInstances: QUERY_SXP_ELEMENTS.map((sxpElement) => ({
+		sxpElement,
+		type: 10,
+		uiConfigurationValues: getUIConfigurationValues(sxpElement),
+	})),
 };

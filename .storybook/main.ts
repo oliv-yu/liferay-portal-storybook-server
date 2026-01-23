@@ -19,6 +19,7 @@ const CWD = process.cwd();
 
 const portalPath = process.env.PORTAL_PATH || path.resolve(CWD, "../portal");
 
+const frontendJsClayPath = `${portalPath}/modules/apps/frontend-js/frontend-js-clay-web`;
 const nodeModulePath = `${portalPath}/modules/node_modules`;
 const searchWebPath = `${portalPath}/modules/apps/portal-search/portal-search-web`;
 const searchAdminWebPath = `${portalPath}/modules/apps/portal-search/portal-search-admin-web`;
@@ -59,6 +60,7 @@ const config: StorybookConfig = {
 				},
 				modules: [
 					...(config.resolve?.modules || []),
+					path.resolve(frontendJsClayPath),
 					path.resolve(nodeModulePath),
 					path.resolve(searchWebPath),
 					path.resolve(searchAdminWebPath),
@@ -72,15 +74,17 @@ const config: StorybookConfig = {
 				rules: [
 					...(config.module?.rules || []),
 					{
+						test: /\.(js|jsx|tsx|ts)$/,
 						include: [
+							path.resolve(frontendJsClayPath),
 							path.resolve(searchWebPath),
 							path.resolve(searchAdminWebPath),
 						],
-					},
-					{
 						exclude: /node_modules/,
-						test: /\.js|tsx$/,
 						use: [
+							{
+								loader: "babel-loader",
+							},
 							{
 								loader: "liferay-lang-key-dev-loader",
 								options: {

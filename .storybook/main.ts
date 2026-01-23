@@ -20,6 +20,7 @@ const CWD = process.cwd();
 const portalPath = process.env.PORTAL_PATH || path.resolve(CWD, "../portal");
 
 const cssPath = `${portalPath}/modules/apps/frontend-theme/frontend-theme-admin/build/css/clay`;
+const frontendJsClayPath = `${portalPath}/modules/apps/frontend-js/frontend-js-clay-web`;
 const nodeModulePath = `${portalPath}/modules/node_modules`;
 
 const cmsSite = `${portalPath}/modules/apps/site/site-cms-site-initializer`;
@@ -66,6 +67,7 @@ const config: StorybookConfig = {
 					...(config.resolve?.modules || []),
 					path.resolve(cssPath),
 					path.resolve(cmsSite),
+					path.resolve(frontendJsClayPath),
 					path.resolve(nodeModulePath),
 					path.resolve(searchWebPath),
 					path.resolve(sxpPath),
@@ -82,18 +84,20 @@ const config: StorybookConfig = {
 				rules: [
 					...(config.module?.rules || []),
 					{
+						test: /\.(js|jsx|tsx|ts)$/,
 						include: [
 							path.resolve(cmsSite),
+							path.resolve(frontendJsClayPath),
 							path.resolve(searchWebPath),
 							path.resolve(sxpPath),
 							path.resolve(rankingsPath),
 							path.resolve(synonymsPath),
 						],
-					},
-					{
 						exclude: /node_modules/,
-						test: /\.js|tsx$/,
 						use: [
+							{
+								loader: "babel-loader",
+							},
 							{
 								loader: "liferay-lang-key-dev-loader",
 								options: {

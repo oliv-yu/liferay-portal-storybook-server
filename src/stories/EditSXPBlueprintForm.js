@@ -1,7 +1,6 @@
 import React from "react";
 
 import EditSXPBlueprintForm from "src/main/resources/META-INF/resources/sxp_blueprint_admin/js/edit_sxp_blueprint/EditSXPBlueprintForm";
-import UQBEditSXPBlueprintForm from "src/main/resources/META-INF/resources/sxp_blueprint_admin/js/edit_sxp_blueprint/UQBEditSXPBlueprintForm";
 import getUIConfigurationValues from "src/main/resources/META-INF/resources/sxp_blueprint_admin/js/utils/sxp_element/get_ui_configuration_values";
 import {EditBlueprintDecorator, ThemeContextDecorator} from "../decorators";
 
@@ -138,7 +137,7 @@ CollectionProvider.args = {
 	},
 };
 
-const UQBTemplate = (args) => <UQBEditSXPBlueprintForm {...args} />;
+const UQBTemplate = (args) => <EditSXPBlueprintForm {...args} />;
 
 export const UQBElements = UQBTemplate.bind({});
 

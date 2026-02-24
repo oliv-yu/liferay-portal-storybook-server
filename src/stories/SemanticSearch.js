@@ -15,7 +15,9 @@ const Template = (args) => (
 		availableTextEmbeddingProviders={{
 			huggingFaceInferenceAPI: "Hugging Face Inference API",
 			huggingFaceInferenceEndpoint: "Hugging Face Inference Endpoint",
+			openai: "openai",
 			txtai: "txtai",
+			vertex_ai: "vertexAI",
 		}}
 		availableTextTruncationStrategies={{
 			beginning: "Beginning",

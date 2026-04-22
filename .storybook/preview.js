@@ -5,6 +5,7 @@ import "@portal/modules/apps/frontend-theme/frontend-theme-admin/build/css/main.
 import "@portal/modules/apps/frontend-theme/frontend-theme-admin/build/css/clay.scss";
 
 import "src/main/resources/META-INF/resources/sxp_blueprint_admin/css/main.scss";
+import "@portal/modules/apps/asset/asset-list-web/src/main/resources/META-INF/resources/css/main.scss";
 
 const SPRITEMAP_PATH = "icons.svg";
 

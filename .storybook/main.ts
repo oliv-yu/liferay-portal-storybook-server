@@ -23,6 +23,7 @@ const cssPath = `${portalPath}/modules/apps/frontend-theme/frontend-theme-admin/
 const frontendJsClayPath = `${portalPath}/modules/apps/frontend-js/frontend-js-clay-web`;
 const nodeModulePath = `${portalPath}/modules/node_modules`;
 
+const assetListWebPath = `${portalPath}/modules/apps/asset/asset-list-web`;
 const cmsSite = `${portalPath}/modules/apps/site/site-cms-site-initializer`;
 const rankingsPath = `${portalPath}/modules/dxp/apps/portal-search-tuning/portal-search-tuning-rankings-web`;
 const searchWebPath = `${portalPath}/modules/apps/portal-search/portal-search-web`;
@@ -65,6 +66,7 @@ const config: StorybookConfig = {
 				},
 				modules: [
 					...(config.resolve?.modules || []),
+					path.resolve(assetListWebPath),
 					path.resolve(cssPath),
 					path.resolve(cmsSite),
 					path.resolve(frontendJsClayPath),
@@ -86,6 +88,7 @@ const config: StorybookConfig = {
 					{
 						test: /\.(js|jsx|tsx|ts)$/,
 						include: [
+							path.resolve(assetListWebPath),
 							path.resolve(cmsSite),
 							path.resolve(frontendJsClayPath),
 							path.resolve(searchWebPath),

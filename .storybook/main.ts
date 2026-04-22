@@ -24,6 +24,7 @@ const frontendJsClayPath = `${portalPath}/modules/apps/frontend-js/frontend-js-c
 const nodeModulePath = `${portalPath}/modules/node_modules`;
 
 const assetListWebPath = `${portalPath}/modules/apps/asset/asset-list-web`;
+const frontendJsComponentsWebPath = `${portalPath}/modules/apps/frontend-js/frontend-js-components-web`;
 const cmsSite = `${portalPath}/modules/apps/site/site-cms-site-initializer`;
 const rankingsPath = `${portalPath}/modules/dxp/apps/portal-search-tuning/portal-search-tuning-rankings-web`;
 const searchWebPath = `${portalPath}/modules/apps/portal-search/portal-search-web`;
@@ -63,6 +64,10 @@ const config: StorybookConfig = {
 							"/modules/apps/frontend-theme/frontend-theme-classic/build/css/clay/_cadmin-variables.scss",
 						),
 					),
+					"frontend-js-components-web": path.join(
+						CWD,
+						".storybook/mock/frontend-js-components-web.mock.js",
+					),
 				},
 				modules: [
 					...(config.resolve?.modules || []),
@@ -70,6 +75,7 @@ const config: StorybookConfig = {
 					path.resolve(cssPath),
 					path.resolve(cmsSite),
 					path.resolve(frontendJsClayPath),
+					path.resolve(frontendJsComponentsWebPath),
 					path.resolve(nodeModulePath),
 					path.resolve(searchWebPath),
 					path.resolve(sxpPath),
@@ -91,6 +97,7 @@ const config: StorybookConfig = {
 							path.resolve(assetListWebPath),
 							path.resolve(cmsSite),
 							path.resolve(frontendJsClayPath),
+							path.resolve(frontendJsComponentsWebPath),
 							path.resolve(searchWebPath),
 							path.resolve(sxpPath),
 							path.resolve(rankingsPath),
@@ -131,13 +138,6 @@ const config: StorybookConfig = {
 			},
 			plugins: [
 				...(config.plugins || []),
-				new webpack.NormalModuleReplacementPlugin(
-					/frontend-js-components-web/,
-					path.join(
-						__dirname,
-						"mock/frontend-js-components-web.mock.js",
-					),
-				),
 				new webpack.NormalModuleReplacementPlugin(
 					/frontend-js-react-web/,
 					path.join(__dirname, "mock/frontend-js-react-web.mock.js"),

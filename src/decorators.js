@@ -17,6 +17,12 @@ export const SheetDecorator = (Story) => (
 	</div>
 );
 
+export const PortletAssetListWebDecorator = (Story) => (
+	<div className="portlet-asset-list-web">
+		<Story />
+	</div>
+);
+
 export const LearnResourcesContextDecorator = (Story) => (
 	<LearnResourcesContext.Provider
 		value={{

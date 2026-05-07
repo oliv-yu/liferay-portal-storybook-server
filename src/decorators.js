@@ -17,6 +17,12 @@ export const SheetDecorator = (Story) => (
 	</div>
 );
 
+export const SheetPlainDecorator = (Story) => (
+	<div class="sheet">
+		<Story />
+	</div>
+);
+
 export const PortletAssetListWebDecorator = (Story) => (
 	<div className="portlet-asset-list-web">
 		<Story />

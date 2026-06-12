@@ -1,8 +1,8 @@
 import React from "react";
 import {ClayIconSpriteContext} from "@clayui/icon";
 
-import "@portal/modules/apps/frontend-theme/frontend-theme-classic/build/css/main.scss";
-import "@portal/modules/apps/frontend-theme/frontend-theme-classic/build/css/clay.scss";
+import "@portal/modules/apps/frontend-theme/frontend-theme-admin/build/css/main.scss";
+import "@portal/modules/apps/frontend-theme/frontend-theme-admin/build/css/clay.scss";
 
 import "src/main/resources/META-INF/resources/css/main.scss";
 

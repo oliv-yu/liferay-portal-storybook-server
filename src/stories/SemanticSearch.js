@@ -2,6 +2,7 @@ import React from "react";
 
 import SemanticSearch from "src/main/resources/META-INF/resources/js/components/semantic_search_configuration/index";
 import learnMessages from "../../static/learn-resources/portal-search-web.json";
+import {FeatureFlagDecorator} from '../decorators';
 
 export default {
 	title: "SemanticSearch/SemanticSearch",
@@ -13,11 +14,12 @@ const Template = (args) => (
 	<SemanticSearch
 		availableEmbeddingVectorDimensions={["384", "512", "768"]}
 		availableTextEmbeddingProviders={{
-			huggingFaceInferenceAPI: "Hugging Face Inference API",
-			huggingFaceInferenceEndpoint: "Hugging Face Inference Endpoint",
-			openai: "openai",
-			txtai: "txtai",
-			vertex_ai: "vertexAI",
+			"Elasticsearch Inference Endpoint": "Elasticsearch Inference Endpoint",
+			"hugging-face-inference-api": "Hugging Face Inference API (Beta)",
+			"hugging-face-inference-endpoint": "Hugging Face Inference Endpoint (Beta)",
+			openai: "OpenAI",
+			txtai: "txtai (Beta)",
+			"vertex-ai": "Vertex AI",
 		}}
 		availableTextTruncationStrategies={{
 			beginning: "Beginning",
@@ -57,3 +59,7 @@ const Template = (args) => (
 );
 
 export const Default = Template.bind({});
+
+export const FeatureFlagEnabled = Template.bind({});
+FeatureFlagEnabled.storyName = "BYO-LLM FF LPD-11319";
+FeatureFlagEnabled.decorators = [FeatureFlagDecorator('LPD-11319', true)];

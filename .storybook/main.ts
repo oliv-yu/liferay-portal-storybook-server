@@ -46,6 +46,7 @@ const config: StorybookConfig = {
 				...config.resolve,
 				alias: {
 					...(config?.resolve?.alias || {}),
+					"@portal": portalPath,
 					"atlas-variables": require.resolve(
 						path.join(
 							portalPath,

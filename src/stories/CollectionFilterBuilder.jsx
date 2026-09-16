@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 
 import CollectionFilterBuilder from 'src/main/resources/META-INF/resources/js/components/CollectionFilterBuilder/index';
 
-import {SheetDecorator} from '../decorators';
+import {ColorSchemeDecorator, SheetDecorator} from '../decorators';
 
 export default {
 	component: CollectionFilterBuilder,
-	decorators: [SheetDecorator],
+	decorators: [SheetDecorator, ColorSchemeDecorator('light')],
 	title: 'Components/CollectionFilterBuilder',
 };
 

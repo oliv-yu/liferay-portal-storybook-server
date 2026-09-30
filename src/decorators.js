@@ -38,8 +38,11 @@ export const EditElementDecorator = (Story) => (
 	</ErrorBoundary>
 );
 
-export const ColorSchemeDecorator = (colorScheme) => (Story) => {
-	document.documentElement.setAttribute("data-color-scheme", colorScheme);
+export const ColorSchemeToolbarDecorator = (Story, {globals}) => {
+	document.documentElement.setAttribute(
+		"data-color-scheme",
+		globals.colorScheme || "light",
+	);
 
 	return <Story />;
 };
